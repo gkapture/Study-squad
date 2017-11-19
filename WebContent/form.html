@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>404 | Corlate</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body>
+
+<script type="text/javascript">
+
+function wnopen11()
+
+{
+
+window.open('locationmap.html','wnpp',"menubar=0,resizable=0,width=800,height=950,top=0,scrollbars=yes");
+
+}
+
+</script>
+<!-- Apply Now Javascript -->
+<script type="text/javascript">
+
+function getCourse(val)
+{
+var xmlhttp;
+	if(window.XMLHttpRequest)
+	{
+	xmlhttp=new XMLHttpRequest();
+	}
+	else if(window.ActiveXObject)
+	{
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	else
+	{
+	alert("Your browser does not support XMLHTTP!");
+	}   //onreadystatechange
+xmlhttp.onreadystatechange=function()
+{
+	if(xmlhttp.readyState==4)
+	{
+	var response=xmlhttp.responseText;
+		
+		//alert(response);
+		document.getElementById("courseDiv").innerHTML=response;
+		
+	}
+}	
+var url="getcourse.php"+"?cid="+val;
+//alert(url);
+xmlhttp.open("GET",url,true);
+xmlhttp.send(null);
+}
+function frmvalid()
+{
+	if(document.getElementById('txtname').value=="")
+	{
+	alert("Enter Name");
+	document.getElementById('txtname').focus();
+	return false;
+	}
+var imgarray=document.getElementById('attach[]');
+	
+	var fileName=imgarray.value;
+	if(fileName=="")
+	{
+	alert("Upload Your photo");
+	imgarray.value="";
+	imgarray.focus();
+	return false;
+	}
+	var ext = fileName.substring(fileName.lastIndexOf('.') + 1);
+		if(ext != "gif" && ext != "GIF" && ext != "JPEG" && ext != "jpeg" && ext != "jpg" && ext != "JPG" )
+		{
+		alert("Upload Gif or Jpg images only");
+		imgarray.value="";
+		imgarray.focus();
+		return false;
+		}
+	if(document.getElementById('selCourse').value=="")
+	{
+	alert("Select course");
+	document.getElementById('selCourse').focus();
+	return false;
+	}
+	var flg=0;
+	chkbox=document.getElementsByName('chk[]');
+	for(i=0;i<chkbox.length;i++)
+	{
+	if(chkbox[i].checked==true)
+	{
+	flg=1;
+	}
+	}
+	if(flg!=1)
+	{
+	alert("Select minimum one branch");
+	chkbox[0].focus();
+	return false;
+	
+	}
+	
+	
+	if(document.getElementById('txtfname').value=="")
+	{
+	alert("Enter father's name");
+	document.getElementById('txtfname').focus();
+	return false;
+	}
+	if(document.getElementById('txtfocc').value=="")
+	{
+	alert("Enter father's occupation");
+	document.getElementById('txtfocc').focus();
+	return false;
+	}
+	if(document.getElementById('txtmname').value=="")
+	{
+	alert("Enter mother's name");
+	document.getElementById('txtmname').focus();
+	return false;
+	}
+	if(document.getElementById('txtmocc').value=="")
+	{
+	alert("Enter mother's occupation");
+	document.getElementById('txtmocc').focus();
+	return false;
+	}
+	if(document.getElementById('txtdate').value=="" ||document.getElementById('txtdate').value>31 || isNaN(document.getElementById('txtdate').value))
+	{
+	alert("Enter a valid birth date");
+	document.getElementById('txtdate').value="";
+	document.getElementById('txtdate').focus();
+	return false;
+	}
+	if(document.getElementById('txtmonth').value=="" ||document.getElementById('txtmonth').value>12 || isNaN(document.getElementById('txtmonth').value))
+	{
+	alert("Enter a valid month");
+	document.getElementById('txtmonth').value="";
+	document.getElementById('txtmonth').focus();
+	return false;
+	} 
+	if(document.getElementById('txtyear').value=="" ||document.getElementById('txtyear').value<1970 || isNaN(document.getElementById('txtyear').value))
+	{
+	alert("Enter a valid year");
+	document.getElementById('txtyear').value="";
+	document.getElementById('txtyear').focus();
+	return false;
+	} 
+	if(document.getElementById('txtnation').value=="")
+	{
+	alert("Enter Nationality");
+	document.getElementById('txtnation').focus();
+	return false;
+	}
+	if(document.getElementById('txtcaste').value=="")
+	{
+	alert("Enter your caste");
+	document.getElementById('txtcaste').focus();
+	return false;
+	}
+	if(document.getElementById('txtbgrp').value=="")
+	{
+	alert("Enter your blood group");
+	document.getElementById('txtbgrp').focus();
+	return false;
+	}
+	if(document.getElementById('txtcommunication').value=="")
+	{
+	alert("Enter address for communication");
+	document.getElementById('txtcommunication').focus();
+	return false;
+	}
+	if(document.getElementById('txtemail').value=="")
+	{
+	alert("Enter your email");
+	document.getElementById('txtemail').focus();
+	return false;
+	}
+	if(document.getElementById('txtmob').value=="" || isNaN(document.getElementById('txtmob').value) || document.getElementById('txtmob').value.length<10)
+	{
+	alert("Enter valid mobile number");
+	document.getElementById('txtmob').value="";
+	document.getElementById('txtmob').focus();
+	return false;
+	}
+	if(document.getElementById('txtlgaddr').value=="")
+	{
+	alert("Enter local guardian's name and address");
+	document.getElementById('txtlgaddr').focus();
+	return false;
+	}
+	 if(document.getElementById('txtlgmob').value=="" || isNaN(document.getElementById('txtlgmob').value) || document.getElementById('txtlgmob').value.length<10)
+	{
+	alert("Enter valid mobile number");
+	document.getElementById('txtlgmob').value="";
+	document.getElementById('txtlgmob').focus();
+	return false;
+	}
+	if(document.getElementById('txtQexam').value=="") 
+	{
+	alert("Enter Qualified Examination name");
+	document.getElementById('txtQexam').focus();
+	return false;
+	}
+	if(document.getElementById('txtQexreg').value=="")
+	{ 
+	alert("Enter Register number");
+	document.getElementById('txtQexreg').focus();
+	return false;
+	}
+	if(document.getElementById('txtInstitute').value=="")
+	{ 
+	alert("Enter Institution name");
+	document.getElementById('txtInstitute').focus();
+	return false;
+	}
+				
+}
+
+</script>
+
+<!-- Jquery -->
+<script src="js/jquery.js"></script>
+<!-- Support media queries for IE8 -->
+<script src="js/respond.min.js"></script>
+<!-- HTML5 and CSS3-in older browsers-->
+<script src="js/modernizr.custom.17475.js"></script>
+
+
+        
+        <!-- =========================Start Col right section ============================= -->
+		<section class="span8 ">
+		<div class="col-right">
+			<p class="lead">
+				We at <strong>Study Squad</strong> are here to provide help and assistance at your every step. So please write to us and we will respond to your query at the earliest ! 
+			</p>
+			
+			<h4>General Enquire or Apply</h4>
+            
+			<div id="message-contact"></div>
+			<form action="application-submit.php" method="post" name="form1" id="form1" enctype="multipart/form-data">
+			<table>
+		  <tr>
+                      <td height="27" colspan="2" align="left" valign="middle" class="campusheaderbr contentheadingboldog"><span class="heading_main_red"><strong>Candidate Details</strong></span></td>
+                    </tr>
+                
+                <tr>
+                  <td><table>
+                    <tr>
+                      <td height="43" align="left" valign="top" class="contentbold">Name of  Student     <strong><br />
+                      </strong><span class="contentwhite">(As given in class    SSLC/10th Certificate)</span> </td>
+                      <td   align="left" valign="top" class="contentbox">:</td>
+                      <td  align="left" valign="top" class="contentbox"><input type="text" name="txtname" id="txtname" class="smlinput" ></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold"> Upload your Photograph </td>
+                      <td height="29" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input name="attach[]" type="file" id="attach[]"  size="34" /></td>
+                    </tr>
+                    <tr>
+                      <td height="15" colspan="3" align="left" valign="top" class="contentbold">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold"> Course Applied for </td>
+                      <td height="29" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <select name="selCourse" id="selCourse"  onchange="getCourse(this.value);">
+					  <option value="" selected="selected">SELECT</option>
+					  <option value="1">ENGINEERING</option>
+					  <option value="2">POLYTECHNIC</option>
+					  <option value="3">MANAGEMENT</option>
+					  <option value="4">NURSING</option>
+					  <option value="5">PHARMACY</option>
+					  <option value="6">EDUCATION</option>
+					  <option value="7">DIPLOMA IN</option>
+					  </select></td>
+                    </tr>
+					<tr class="contentbold">
+                      <td align="left" valign="top" colspan="3" ><div id="courseDiv"></div></td>
+                    </tr>
+					
+                    <tr>
+                      <td height="25" align="left" valign="middle" class="contentbold"> Father's Name</td>
+                      <td height="25" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtfname" id="txtfname" class="smlinput" ></td>
+                    </tr>
+                    <tr>
+                      <td height="41" align="left" valign="top" class="contentbold"> Occupation </td>
+                      <td height="41" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtfocc" id="txtfocc" class="smlinput"  /></td>
+                    </tr>
+                    <tr>
+                      <td height="24" align="left" valign="middle" class="contentbold">Mother's Name  </td>
+                      <td height="24" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtmname" id="txtmname" class="smlinput" ></td>
+                    </tr>
+                    <tr>
+                      <td height="43" align="left" valign="top" class="contentbold"> Occupation </td>
+                      <td height="43" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtmocc" id="txtmocc" class="smlinput"  /></td>
+                    </tr>
+                    <tr>
+                      <td height="43" align="left" valign="top" class="contentbold">Date Of Birth </td>
+                      <td height="43" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtdate" id="txtdate" class="smlinput" style="width:40px;">
+					   <input type="text" name="txtmonth" id="txtmonth" class="smlinput" style="width:40px;"> 
+					   <input type="text" name="txtyear" id="txtyear" class="smlinput" style="width:89px;">&nbsp;<br /> 
+					  <span class="style1"> [eg:    DD/MM/YYYY]&nbsp; </span></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Gender </td>
+                      <td height="29" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input name="gender" id="gender" type="radio" value="Male" checked="checked"/>
+                        Male
+                        <input name="gender" id="gender" type="radio" value="Female" />
+                        Female</td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Nationality</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtnation" id="txtnation" class="smlinput"  /></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Caste</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtcaste" id="txtcaste" class="smlinput"  /></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Blood Group </td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtbgrp" id="txtbgrp" class="smlinput"  /></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Address for Communication</td>
+                      <td height="29" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <textarea name="txtcommunication" id="txtcommunication" rows="6" class="smltextarea" ></textarea></td>
+                    </tr>
+                    <tr class="contentbold">
+                      <td height="8" colspan="3"></td>
+                      </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Email</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtemail" id="txtemail" class="smlinput" ></td>
+                    </tr>
+					<tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Mobile</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtmob" id="txtmob" class="smlinput" ></td>
+                    </tr>
+					<tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Aadhaar Card No</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtmob" id="txtmob" class="smlinput"></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Local Guardian's Name and Address </td>
+                      <td height="29" align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <textarea name="txtlgaddr" id="txtlgaddr" rows="6" class="smltextarea" ></textarea></td>
+                    </tr>
+                    <tr class="contentbold">
+                      <td height="8" colspan="3"></td>
+                    </tr>
+                    <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Mobile</td>
+                      <td align="left" valign="top" class="contentbox">:</td>
+                      <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtlgmob" id="txtlgmob" class="smlinput"  /></td>
+                    </tr>
+					<tr class="contentbold">
+                      <td height="29" align="left" colspan="3">					 </td>
+                    </tr>
+					<tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Qualified Examination Passed</td>
+					  <td align="left" valign="top" class="contentbox">:</td>
+					  <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtQexam" id="txtQexam" class="smlinput"  /></td>
+					  </tr>
+					  <tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Registration No.</td>
+					  <td align="left" valign="top" class="contentbox">:</td>
+					  <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtQexreg" id="txtQexreg" class="smlinput"  /></td>
+					  </tr><tr>
+                      <td height="29" align="left" valign="top" class="contentbold">Name of institution last attended </td>
+					  <td align="left" valign="top" class="contentbox">:</td>
+					  <td align="left" valign="top" class="contentbox">
+					  <input type="text" name="txtInstitute" id="txtInstitute" class="smlinput"  /></td>
+					  </tr>
+					  <tr>
+                        <td height="29" align="center" valign="top"  class="contentbold" colspan="3">
+						  <table>
+<tr>
+                              <td colspan="4" align="center" valign="middle"><strong>Marks obtained in the qualifying Examination</strong></td>
+  </tr>
+                            <tr>
+                              <td width="10%" align="center" valign="middle"><strong>Sl. No.</strong></td>
+                              <td width="30%" align="center" valign="middle"><strong>Subject</strong></td>
+                              <td width="30%" align="center" valign="middle"><strong>Marks Obtained</strong></td>
+                              <td width="30%" align="center" valign="middle"><strong>Percentage</strong></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">1</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"   style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]" style="border:hidden"  /></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">2</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"   style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]"  style="border:hidden" /></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">3</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"  style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]" style="border:hidden"  /></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">4</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"  style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]" style="border:hidden" /></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">5</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"  style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden"  /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]" style="border:hidden" /></td>
+  </tr>
+							 <tr>
+                              <td width="10%" align="center" valign="middle">6</td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtSub[]" id="txtSub[]"  style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtMark[]" id="txtMark[]" style="border:hidden" /></td>
+                              <td width="30%" align="center" valign="middle">
+							  <input type="text" name="txtPer[]" id="txtPer[]" style="border:hidden" /></td>
+  </tr>
+                          </table></td>
+					    </tr><tr>
+                      <td height="29" align="left" valign="top"   colspan="3"></td>
+                    </tr>
+					
+                      <td colspan="3" align="left" valign="top"  class="contentbold" style="padding-left:10px; border:3px solid #CC0000">
+					    <p>List of documents to be attached (Originals to be Produced at the time of selection interview)</p>
+					    <ul>
+					      <li class="contentwhite">SSLC Marks Sheet </li>
+					      <li class="contentwhite">II PUC / 10+2 / PDC Marks Sheet</li>
+					      <li class="contentwhite"> Transfer Certificate </li>
+					      <li class="contentwhite">Conduct Certificate (issued from institution last studied)</li>
+					      <li class="contentwhite"> Migration Certificate</li>
+					      <li class="contentwhite"> Recent  Passport size Colour Photograph</li>
+					      <li class="contentwhite"> Student Passport Visa (for foreign nationals)</li>
+					      <li class="contentwhite"> Cumulative Record along with syllabus pertaining to qualifying examination (for foreign nationals) </li>
+					      <li class="contentwhite">Degree Certificate & Marks Sheet CET Allotment letter with fee paid receipts</li>
+					      <li class="contentwhite"> Income & Caste Certificate (if any)</li>
+					      <li><span class="contentwhite">Diploma Certificate / Marks Sheet (for lateral entry students) </span><br />
+					        <br />
+					      </li>
+					      </ul></td>
+                    </tr>
+					
+					<tr>
+					  <td height="29" align="left" valign="top" class="contentbox">&nbsp;</td>
+					  <td align="left" valign="top" class="contentbox">&nbsp;</td>
+					  <td align="right" valign="top" class="marooncontent">* (Attach only doc/pdf/jpeg format files) </td>
+					  </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 1</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 2</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 3</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 4</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 5</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 6</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 7</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 8</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]"  size="34"/> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 9</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 10</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]"  size="34"/> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 11</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+					<tr>
+                      <td height="34" align="right" valign="middle" class="contentbox">Attachment 12</td>
+                      <td align="center" valign="middle" class="contentbox">:</td>
+                      <td align="left" valign="middle" class="contentbox">
+					 <input type="file"  name="attach[]" id="attach[]" size="34" /> </td>
+                    </tr>
+                    </table></td>
+                </tr>
+                <tr>
+                  <td height="35" align="left" valign="top" class="contentbold" style="padding-left:10px; border:3px solid #CC0000"><p>Bank details for making the payment <br />
+                  </p>
+					
+
+                    <p class="contentwhite">
+                      Pls make the payment to above bank account by <strong>Online Tranfer / DD / Cash Deposit </strong>.</p>
+                    <p>Pls attach the receipt of the online transfer / scanned copy of the bank challan / bank draft: <br />
+                      <input type="file"  name="attach[]" id="attach[]" size="34" /></p></td>
+                </tr>
+                <tr>
+                  <td height="35" align="center" valign="bottom">
+				  <input type="image" class=" button_medium" name="applicationsubmit" id="applicationsubmit" value="Submit" onclick="return frmvalid()"/>				  </td>
+                </tr>
+              </table>
+            </form>
+            
+		
+            
+		</div><!-- end col right-->
+		</section>
+	</div><!-- end row-->
+</div><!-- end container-->
+  
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+
+</body>
+</html>
